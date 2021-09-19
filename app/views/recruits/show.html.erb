@@ -1,0 +1,10 @@
+﻿<div>
+  <p>GM：<%= @recruit.user.name %></p>
+  <p>タイトル：<%= @recruit.title %></p>
+  <p>日付：<%= @recruit.date %></p>
+  <p>時間：<%= @recruit.time %></p>
+  <p>場所：<%= @recruit.place %></p>
+  <p>人員：<%= @recruit.headcount %></p>
+  <p>投稿日時：<%= @recruit.created_at.strftime('%Y/%m/%d') %></p>
+  <%= render partial:'reservations/reservation', locals: { recruit: @recruit} %>
+</div>

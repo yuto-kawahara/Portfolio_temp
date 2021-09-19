@@ -1,0 +1,13 @@
+﻿<div>
+<% if recruit.user != current_user  %>
+  <% if recruit.reservated_by?(current_user) %>
+    <li>
+      <%= link_to 'キャンセル', recruit_reservations_path(recruit.id), method: :delete %>
+    </li>
+  <% else %>
+    <li>
+      <%= link_to '予約', recruit_reservations_path(recruit.id), method: :post %>
+    </li>
+  <% end %>
+<% end %>
+</div>

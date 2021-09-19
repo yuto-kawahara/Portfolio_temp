@@ -1,0 +1,16 @@
+﻿<h1>募集投稿フォーム</h1>
+<%= form_with model: @recruit, local:true do |f| %>
+  <h4>タイトル</h4>
+  <%= f.text_field :title %>
+  <h4>日付</h4>
+  <%= f.date_select :date %>
+  <h4>時間</h4>
+  <%= f.time_select :time %>
+  <h4>場所</h4>
+  <%= f.text_field :place %>
+  <h4>人員</h4>
+  <%= f.text_field :headcount %>
+  <h4>備考</h4>
+  <%= f.text_area :remarks %>
+  <%= f.submit '投稿' %>
+<% end %>
