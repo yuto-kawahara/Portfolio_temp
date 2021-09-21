@@ -1,0 +1,16 @@
+﻿<h1>ゲーム登録フォーム</h1>
+<%= form_with model: @game, local:true do |f| %>
+  <h4>タイトル</h4>
+  <%= f.text_field :name %>
+  <h4>説明</h4>
+  <%= f.text_area :body %>
+  <h4>所要時間</h4>
+  <%= f.select :duration, options_for_select({ "軽量級（～30分）" => "light", "中量級（30～60分）" => "middle", "重量級（60分～）" => "heavy" }) %>
+  <h4>人員</h4>
+  <%= f.text_field :headcount %>
+  <h4>難易度</h4>
+  <%= f.text_field :level %>
+  <h4>タグ</h4>
+  <%= f.text_field :tag_name %>
+  <%= f.submit '登録' %>
+<% end %>

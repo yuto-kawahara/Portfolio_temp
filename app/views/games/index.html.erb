@@ -1,0 +1,5 @@
+﻿  <% @tag_list.each do |list| %>
+    <span>
+      <%= link_to list.tag_name, tag_games_path(tag_id: list.id) %>
+    </span>
+  <% end %>

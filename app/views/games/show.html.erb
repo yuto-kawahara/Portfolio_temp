@@ -1,0 +1,14 @@
+﻿<div>
+  <%= attachment_image_tag @game, :game_image, :fill, 60, 60 %>
+  <p>ゲーム名：<%= @game.name %></p>
+  <p>説明：<%= @game.body %></p>
+  <p>所要時間：<%= @game.duration %></p>
+  <p>人数：<%= @game.headcount %></p>
+  <p>難易度：<%= @game.level %></p>
+  <p>タグ：</p>
+  <% @game_tags.each do |tag| %>
+    <span>
+      <%= link_to tag.tag_name, tag_games_path(tag_id: tag.id) %>
+    </span>
+  <% end %>
+</div>
