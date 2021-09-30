@@ -3,3 +3,8 @@
       <%= link_to list.tag_name, tag_games_path(tag_id: list.id) %>
     </span>
   <% end %>
+  <% @games.each do |game| %>
+    <div>
+      <%= link_to game.name, game_path(game.id) %>
+    </div>
+  <% end %>

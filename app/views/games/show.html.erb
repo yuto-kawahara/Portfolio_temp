@@ -1,5 +1,5 @@
 ﻿<div>
-  <%= attachment_image_tag @game, :game_image, :fill, 60, 60 %>
+  <%= attachment_image_tag @game, :game_image, :fill, 300, 300 %>
   <p>ゲーム名：<%= @game.name %></p>
   <p>説明：<%= @game.body %></p>
   <p>所要時間：<%= @game.duration %></p>
@@ -11,4 +11,6 @@
       <%= link_to tag.tag_name, tag_games_path(tag_id: tag.id) %>
     </span>
   <% end %>
+  <%= link_to "Edit", edit_game_path(@game.id) %>
+  <%= link_to "Destroy", game_path(@game.id), method: :delete %>
 </div>

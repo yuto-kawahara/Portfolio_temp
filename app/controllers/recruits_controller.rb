@@ -11,7 +11,7 @@ class RecruitsController < ApplicationController
   end
 
   def index
-    
+    @recruits = Recruit.all
   end
 
   def show

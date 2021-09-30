@@ -14,7 +14,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '581fdafe8a934da62a801488c92e9a86ba87e998a5014a61ed921893e470ef734f01eb4adee5642f975ead7707462469241ca86c09d952e7c7dbc9fad2be9859'
+  # config.secret_key = '9f6aaaba96ec29a117a37a9a7925734c5c318e6ac550b4e5f0b561e639a972a222221e259d473fcd54cde99395b5e57b749afe9fc922775561ceab5652109b46'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -126,7 +126,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = 'aae0f2e61b338a79b6570c6f5d6358a71c163faa80f3183fcdde1991f44712265a52e0ba7f0e6cd2c64bbba70447525863e8f361b823bc20923e0382ca57ac23'
+  # config.pepper = '0060a6c16ffeeb0ec1188018f9335e9844f49bce2594cd1d411279dfec355695594ae4ca8cde86da7e3558f3e504d9aa3f5424be358a03efff40861c619312b5'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -244,7 +244,7 @@ Devise.setup do |config|
   # Turn scoped views on. Before rendering "sessions/new", it will first check for
   # "users/sessions/new". It's turned off by default because it's slower if you
   # are using only default views.
-  # config.scoped_views = false
+  config.scoped_views = true  
 
   # Configure the default scope given to Warden. By default it's the first
   # devise role declared in your routes (usually :user).
@@ -252,7 +252,7 @@ Devise.setup do |config|
 
   # Set this configuration to false if you want /users/sign_out to sign out
   # only the current scope. By default, Devise signs out all scopes.
-  # config.sign_out_all_scopes = true
+  config.sign_out_all_scopes = false
 
   # ==> Navigation configuration
   # Lists the formats that should be treated as navigational. Formats like

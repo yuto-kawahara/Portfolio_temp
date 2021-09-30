@@ -1,0 +1,5 @@
+﻿<% @recruits.each do |recruit| %>
+  <div>
+    <%= link_to recruit.title, recruit_path(recruit.id) %>
+  </div>
+<% end %>
