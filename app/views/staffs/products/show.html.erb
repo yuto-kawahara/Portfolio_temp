@@ -1,0 +1,7 @@
+﻿<div>
+  <%= attachment_image_tag @product, :image, :fill, 300, 300 %>
+  <p>商品名：<%= @product.name %></p>
+  <p>価格：<%= @product.price %></p>
+  <%= link_to "編集", edit_staffs_product_path(@product.id) %>
+  <%= link_to "削除", staffs_product_path(@product.id), method: :delete %>
+</div>

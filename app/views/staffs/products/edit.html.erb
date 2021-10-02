@@ -1,0 +1,10 @@
+﻿<h1>商品登録</h1>
+<%= form_with model: [:staffs, @product], local:true do |f| %>
+  <h4>画像</h4>
+  <%= f.attachment_field :image %>
+  <h4>商品名</h4>
+  <%= f.text_field :name %>
+  <h4>価格</h4>
+  <%= f.text_field :price %>
+  <%= f.submit '登録' %>
+<% end %>

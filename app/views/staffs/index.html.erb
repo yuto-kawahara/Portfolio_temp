@@ -1,0 +1,8 @@
+﻿<h3>スタッフ一覧</h3>
+<% @staffs.each do |staff| %>
+    <%= staff.name %>
+  <% if staff == current_staff %>
+    <%= link_to "編集", edit_staff_registration_path %>
+  <% end %>
+  <br>
+<% end %>

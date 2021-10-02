@@ -6,4 +6,5 @@ class User < ApplicationRecord
   
   has_many :recruits, dependent: :destroy
   has_many :reservations, dependent: :destroy
+  has_many :cart_items, dependent: :destroy
 end

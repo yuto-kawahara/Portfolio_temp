@@ -16,7 +16,15 @@ Rails.application.routes.draw do
   resources :recruits, only: [:new, :create, :index, :show, :destroy] do
     resource :reservations, only: [:create, :destroy]
   end
+  resources :products, only: [:index, :show]
   resources :users, only: [:show, :edit, :update, :index]
+  resources :cart_items
+
+  resources :staffs, only: [:edit, :update, :index]
+  namespace :staffs do
+    resources :products
+  end
+
   resources :tags, only: [:create, :destroy] do
     get 'games', to: 'games#search'
   end
