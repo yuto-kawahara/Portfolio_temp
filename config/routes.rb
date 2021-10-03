@@ -17,7 +17,11 @@ Rails.application.routes.draw do
     resource :reservations, only: [:create, :destroy]
   end
   resources :products, only: [:index, :show]
-  resources :users, only: [:show, :edit, :update, :index]
+  # resources :users, only: [:show, :edit, :update, :index], 
+  get 'mypage' => 'users#show'
+  patch 'mypage/profile_edit' => 'users#update'
+  get 'mypage/profile_edit' => 'users#edit'
+
   resources :cart_items
 
   resources :staffs, only: [:edit, :update, :index]

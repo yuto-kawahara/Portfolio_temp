@@ -1,0 +1,28 @@
+﻿<%= form_with model: @user, url: mypage_profile_edit_path, local:true do |f| %>
+  <h2>User info</h2>
+  <div class="form-group h-adr" >
+    <span class="p-country-name" style="display:none;">Japan</span>
+    <dl>
+      <dt>お名前</dt>
+      <dd><%= f.text_field :name%></dd>
+    </dl>
+    <dl>
+      <dt>メールアドレス</dt>
+      <dd><%= f.email_field :email, autofocus: true, autocomplete: "email" %></dd>
+    </dl>
+     <dl>
+      <dt>電話番号</dt>
+      <dd><%= f.text_field :tel, autofocus: true, autocomplete: "tel" %></dd>
+    </dl>
+    <dl>
+      <dt>郵便番号</dt>
+      <dd><%= f.text_field :postal, autofocus: true, autocomplete: "postal", class: "p-postal-code" %></dd>
+    </dl>
+    <dl>
+      <dt>住所</dt>
+      <dd><%= f.text_field :address, autofocus: true, autocomplete: "address",class: "p-region p-locality p-street-address p-extended-address" %></dd>
+    </dl>
+
+    <%= f.submit '会員情報の編集' %>
+  </div>
+<% end %>
