@@ -29,6 +29,7 @@ class CartItemsController < ApplicationController
   end
 
   def destroy
+    binding.pry
     item = CartItem.find(params[:id])
     item.destroy
     redirect_to cart_items_path

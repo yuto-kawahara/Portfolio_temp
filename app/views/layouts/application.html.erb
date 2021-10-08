@@ -5,37 +5,12 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
   </head>
-
   <body>
-    <% if user_signed_in? %>
-      <li>
-        <%= link_to "会員ログアウト", destroy_user_session_path, method: :delete %>
-      </li>
-    <% else %>
-      <li>
-        <%= link_to "新規会員登録", new_user_registration_path %>
-      </li>
-      <li>
-        <%= link_to "会員ログイン", new_user_session_path %>
-      </li>
-    <% end %>
-        <% if staff_signed_in? %>
-      <li>
-        <%= link_to "管理者ログアウト", destroy_staff_session_path, method: :delete %>
-      </li>
-    <% else %>
-      <li>
-        <%= link_to "管理者新規登録", new_staff_registration_path %>
-      </li>
-      <li>
-        <%= link_to "管理者ログイン", new_staff_session_path %>
-      </li>
-    <% end %>
-    <%= yield %>
+    <%= render 'layouts/header' %>
+    <%= render 'layouts/main' %>
   </body>
 </html>

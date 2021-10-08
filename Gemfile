@@ -56,3 +56,5 @@ gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 gem "rmagick"
 gem 'pry-byebug'
+gem 'kaminari','~> 1.2.1'
+gem 'bootstrap', '~> 4.5'

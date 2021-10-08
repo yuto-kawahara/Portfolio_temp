@@ -1,0 +1,147 @@
+﻿body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #505050;
+}
+
+  /* ---------------------------- */
+  /* header
+  /* ---------------------------- */
+.header {
+  background-color: #EE9473;
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  width: 100%;
+  & a {
+    text-decoration: none;
+    color: #505050;
+  }
+
+  & .site-title {
+    margin: 0;
+    color: #fff;
+  }
+  
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    align-items: center;
+    margin: 0 auto;
+  }
+}
+
+.sub-btn-list {
+  display: flex;
+  justify-content: space-evenly;
+  width: 30%;
+  margin: 0;
+  & a {
+    // width: 75px;
+    // height: 75px;
+    // background-color: #6ea924;
+    color: #fff;
+    display: block;
+    // border-radius: 50%;
+    padding: 10px;
+  }
+  & img {
+    width: 30px;
+  }
+  & li{
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.8rem;
+  }
+}
+
+/* ---------------------------- */
+/* main
+/* ---------------------------- */
+.main {
+  width: 100%;
+  padding: 0 70px;
+}
+
+.product-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0;
+  & a {
+    text-decoration: none;
+    color: #000;
+  }
+  & img {
+    width: 100%;
+    object-fit: contain;  //縦横比を保ちながら画像全体を表示
+  }
+  & li {
+    width: 18%;
+    margin-bottom: 20px;
+  }
+}
+
+.product-item {
+  &__image {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 200px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+  }
+  & p {
+    margin: 0;
+  }
+
+  &__caption {
+    margin: 5px auto 0 5px;
+  }
+  &__name {
+  }
+  &__price {
+
+  }
+}
+
+.pagination {
+  & a {
+    border: none;     /*枠線をなくす*/
+    color: #696969;   /*文字の色を変える*/  
+  }
+  & .page-link {
+    margin-right: 10px;
+  }
+  // .page-item:last-child .page-link {
+  //   border-radius: 50%;
+  //   background-color: #EE9473;
+  //   line-height: 1.1;
+  // }
+  & .active {
+    & .page-link {
+      border-radius: 50%;
+      background-color: #EE9473;
+      line-height: 1.1;
+    }
+  }
+
+  & :hover {
+    & .page-link {
+      border-radius: 50%;
+      background-color: #EE9473;
+      line-height: 1.1;
+      color: #fff; 
+    }
+  }
+}

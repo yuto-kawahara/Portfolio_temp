@@ -17,12 +17,12 @@ Rails.application.routes.draw do
     resource :reservations, only: [:create, :destroy]
   end
   resources :products, only: [:index, :show]
-  # resources :users, only: [:show, :edit, :update, :index], 
-  get 'mypage' => 'users#show'
+  # resources :users, only: [:show, :edit, :update, :index]
+  get 'mypage' => 'users#mypage'
   patch 'mypage/profile_edit' => 'users#update'
-  get 'mypage/profile_edit' => 'users#edit'
+  get 'mypage/profile_edit' => 'users#profile_edit'
 
-  resources :cart_items
+  resources :cart_items, only: [:index, :create, :update, :destroy]
 
   resources :staffs, only: [:edit, :update, :index]
   namespace :staffs do

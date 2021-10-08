@@ -1,12 +1,11 @@
 class UsersController < ApplicationController
-  
-  def show
-    @user = current_user
-  end
-  def edit
+  def mypage
     @user = current_user
   end
   
+  def profile_edit
+  end 
+
   def update
     @user = current_user
     if @user.update(user_params)

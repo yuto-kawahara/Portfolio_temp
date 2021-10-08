@@ -1,0 +1,47 @@
+<header class="header">
+  <div class="header__inner">
+    <a href="/">
+      <h1 class="site-title">ECサイト</h1>
+    </a>
+    <ul class="sub-btn-list">
+      <% if user_signed_in? %>
+        <li>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <img src="/assets/login-icon.svg" alt="">
+            <br />
+            Logout
+          <% end %>
+        </li>
+        <li>
+          <a href="/mypage">
+            <img src="/assets/signup-icon.svg" alt="">
+            <br />
+            Mypage
+          </a>
+        </li>
+      <% else %>
+        <li>
+          <a href="/users/sign_up">
+            <img src="/assets/signup-icon.svg" alt="">
+            <br />
+            Sign up
+          </a>
+        </li>
+        <li>
+          <a href="/users/sign_in">
+            <img src="/assets/login-icon.svg" alt="">
+            <br />
+            Login
+          </a>
+        </li>
+      <% end %>
+      <li>
+        <a href="/cart_items">
+          <img src="/assets/cart-icon.svg" alt="">
+          <br />
+          Cart
+        </a>
+      </li>
+    </ul>
+  </div>
+</header>
