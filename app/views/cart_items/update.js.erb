@@ -1,0 +1,3 @@
+$('#quantity_change_<%= @item.id %>').html("<%= j(render 'quantity_change', item: @item) %>");
+$('#cartitem_totalprice').html("<%= j(render 'total-price', items: @items) %>");
+$('#cart_item_wrapper').html("<%= j(render 'cartitem_list', items: @items) %>");

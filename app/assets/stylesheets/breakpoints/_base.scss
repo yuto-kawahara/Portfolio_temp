@@ -123,11 +123,6 @@ a {
   & .page-link {
     margin-right: 10px;
   }
-  // .page-item:last-child .page-link {
-  //   border-radius: 50%;
-  //   background-color: #EE9473;
-  //   line-height: 1.1;
-  // }
   & .active {
     & .page-link {
       border-radius: 50%;
@@ -137,11 +132,54 @@ a {
   }
 
   & :hover {
+
     & .page-link {
       border-radius: 50%;
       background-color: #EE9473;
       line-height: 1.1;
-      color: #fff; 
+      color: #fff;
     }
+  }
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+.item {
+  display: flex;
+  box-shadow: 0 0 8px rgba(54, 32, 32, 0.5);
+  margin-bottom: 30px;
+  &__link{
+    width: 45%;
+    margin-right: 20px;
+  }
+
+  &__image {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+  }
+  &__caption {
+    width: 40%;
+  }
+
+  
+}
+.delete_form {
+  position: relative;
+}
+.delete_btn {
+  border-radius: 20px;
+
+  &::before {
+    position: absolute;
+    content: "";
+    display: inline-block;
+    background-color: #000;
+    width: 35px;
+    height: 2px;
+    top: 20px ;
+    right: 20px;
   }
 }

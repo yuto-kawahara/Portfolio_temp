@@ -1,0 +1,3 @@
+﻿$('#cartitem_list_<%= @item.id %>').remove();
+$('#cartitem_totalprice').html("<%= j(render 'total-price', items: @items) %>");
+$('#cart_item_wrapper').html("<%= j(render 'cartitem_list', items: @items) %>");

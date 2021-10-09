@@ -1,13 +1,20 @@
 module ApplicationHelper
   
   # 商品ごとの合計価格
-  def total_price(money, quantity)
-    total_price = money * quantity
-    total_price.to_s(:delimited)
+  def subtotal_price(price, quantity)
+    subtotal_price = add_tax(price * quantity)
+    return subtotal_price
   end
   
+  # 商品全体の合計金額
+  def total_price(items)
+    total_price = items.pluck(:quantity, :price).sum{ |q, p| q * p }
+    total_price = add_tax(total_price)
+    return total_price
+  end
+
   # 消費税を加えた商品価格
-  def add_tax(money)
-    taxed_price = (money * 1.10).round
+  def add_tax(price)
+    taxed_price = (price * 1.10).round
   end
 end

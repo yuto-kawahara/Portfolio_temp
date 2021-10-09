@@ -1,13 +1,10 @@
 class CartItemsController < ApplicationController
   before_action :authenticate_user!
-  before_action :setup_cart_item!,except: [:index, :destroy]
+  before_action :setup_cart_item!,except: [:index]
+  respond_to :html, :js
 
   def index
-    @items = CartItem.all
-    @total_price = 0
-    @items.each do |item|
-      @total_price += (item.product.price * item.quantity)
-    end
+    @items = CartItem.includes(:product)
   end
 
   def create
@@ -22,17 +19,13 @@ class CartItemsController < ApplicationController
   end
 
   def update
-    item = CartItem.find(params[:id])
-    if item.update(item_params)
-      redirect_to cart_items_path
-    end
+    @item.update(item_params)
+    @items = CartItem.includes(:product)
   end
 
   def destroy
-    binding.pry
-    item = CartItem.find(params[:id])
-    item.destroy
-    redirect_to cart_items_path
+    @item.destroy
+    @items = CartItem.includes(:product)
   end
 
 
