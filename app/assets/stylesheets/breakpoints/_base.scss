@@ -118,7 +118,7 @@ a {
 .pagination {
   & a {
     border: none;     /*枠線をなくす*/
-    color: #696969;   /*文字の色を変える*/  
+    color: #696969;   /*文字の色を変える*/
   }
   & .page-link {
     margin-right: 10px;
@@ -146,13 +146,39 @@ ul {
   padding: 0;
   margin: 0;
 }
+
+#wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.main-area {
+  width: 70%;
+}
+
+.side-area {
+  width: 24%;
+}
+
+
 .item {
   display: flex;
   box-shadow: 0 0 8px rgba(54, 32, 32, 0.5);
   margin-bottom: 30px;
+
+  & a {
+    color: #000;
+    text-decoration: none;
+  }
   &__link{
     width: 45%;
     margin-right: 20px;
+  }
+
+  &__name {
+    display: block;
+    font-size: 20px;
+    color: #000;
+    margin: 10px 0;
   }
 
   &__image {
@@ -182,4 +208,57 @@ ul {
     top: 20px ;
     right: 20px;
   }
+}
+
+#cartitem_totalprice {
+  text-align: right;
+}
+
+.customer-info {
+  margin: 0 auto;
+  width: 80%;
+}
+.form-group {
+  flex-wrap: wrap;
+}
+dl {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+dt {
+  width: 30%;
+}
+
+dd {
+  width: 70%;
+}
+
+.form-control {
+  width: 100%;
+}
+
+.form-invalid {
+  color: #f50000;
+  font-size: 12px;
+  padding-left: 12px;
+}
+
+.input-invalid {
+  border: 1px solid #f50000;
+}
+
+.btn {
+  display: block;
+  margin: 0 0 20px auto;
+  width: 10%;
+  text-align: center;
+  border-radius: 30px;
+  line-height: 35px;
+  font-size: 16px;
+  padding: 0 15px;
+  background-color: #EE9473;
+  color: #fff;
+  border: none;
 }

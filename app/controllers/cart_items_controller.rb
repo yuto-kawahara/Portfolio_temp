@@ -1,6 +1,6 @@
 class CartItemsController < ApplicationController
   before_action :authenticate_user!
-  before_action :setup_cart_item!,except: [:index]
+  before_action :setup_cart_item!,except: [:index, :destroy_all]
   respond_to :html, :js
 
   def index
@@ -14,7 +14,7 @@ class CartItemsController < ApplicationController
       @item.quantity += params[:cart_item][:quantity].to_i
     end
     if @item.save
-      redirect_to cart_items_path
+      @items = CartItem.includes(:product)
     end
   end
 
@@ -25,6 +25,11 @@ class CartItemsController < ApplicationController
 
   def destroy
     @item.destroy
+    @items = CartItem.includes(:product)
+  end
+
+  def destroy_all
+    CartItem.destroy_all
     @items = CartItem.includes(:product)
   end
 

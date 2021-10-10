@@ -22,7 +22,12 @@ Rails.application.routes.draw do
   patch 'mypage/profile_edit' => 'users#update'
   get 'mypage/profile_edit' => 'users#profile_edit'
 
-  resources :cart_items, only: [:index, :create, :update, :destroy]
+  resources :cart_items, only: [:index, :create, :update, :destroy] do
+    collection do
+      delete 'destroy_all'
+    end
+  end
+
 
   resources :staffs, only: [:edit, :update, :index]
   namespace :staffs do

@@ -1,7 +1,7 @@
-﻿<%= form_with model: item, local: false do |f| %>
+﻿<%= form_with model: item, local: false, id: "quantity_change_form" do |f| %>
   <%= f.hidden_field :product_id, value: item.product_id %>
   <%= f.select :quantity, options_for_select(1..10, {selected: item.quantity} ) %>
   <%= f.submit "数量の変更" %>
 <% end %>
 <p>個数：<%= item.quantity %></p>
-<p>小計（<%= item.quantity %>個の商品）&yen<%= subtotal_price(item.product.price, item.quantity) %></p>
+<p>小計（<%= item.quantity %>個の商品）&yen<%= subtotal_price(item).to_s(:delimited) %></p>

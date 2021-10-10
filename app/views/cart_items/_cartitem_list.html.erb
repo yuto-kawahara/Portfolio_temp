@@ -1,6 +1,7 @@
 <div id="cart_item_wrapper">
   <% if !items.blank? %>
     <p>現在<%= @items.sum(:quantity) %>個の商品が入っています</p>
+    <%= link_to "全削除", destroy_all_cart_items_path, method: :delete, remote: true, class: "btn" %>
     <ul>
       <% items.each do |item| %>
         <li id="cartitem_list_<%= item.id %>", class="item">
@@ -8,7 +9,7 @@
             <%= attachment_image_tag item.product, :image, class: "item__image" %><br>
           <% end %>
           <div class="item__caption">
-            <a href="/products/<%= item.product_id %>"><%= item.product.name %></a>
+            <a href="/products/<%= item.product_id %>", class="item__name"><%= item.product.name %></a>
             <div id="quantity_change_<%= item.id %>">
               <%= render 'quantity_change', item: item %>      
             </div>
@@ -19,9 +20,6 @@
         </li>
       <% end %>
     </ul>
-    <div id="cartitem_totalprice">
-      <%= render 'total-price', items: items %>
-    </div>
   <% else %>
     <p>現在、お客様のカートに商品はありません。</p>
   <% end %>

@@ -1,8 +1,10 @@
 module ApplicationHelper
   
   # 商品ごとの合計価格
-  def subtotal_price(price, quantity)
-    subtotal_price = add_tax(price * quantity)
+  def subtotal_price(item)
+    quantities = item.quantity
+    pricies = item.product.price
+    subtotal_price = add_tax(pricies * quantities)
     return subtotal_price
   end
   

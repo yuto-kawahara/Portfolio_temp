@@ -1,2 +1,12 @@
 <h3>カートの中身</h3>
-<%= render 'cartitem_list', items: @items %>
+<div id="wrapper">
+  <div class="main-area">
+    <%= render 'cartitem_list', items: @items %>
+  </div>
+  <div class="side-area">
+    <div id="cartitem_totalprice">
+      <%= render 'total-price', items: @items %>
+    </div>
+  </div>
+</div>
+

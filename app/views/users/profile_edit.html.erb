@@ -1,28 +1,42 @@
-﻿<%= form_with model: current_user, url: mypage_profile_edit_path, local:true do |f| %>
-  <h2>User info</h2>
-  <div class="form-group h-adr" >
-    <span class="p-country-name" style="display:none;">Japan</span>
-    <dl>
-      <dt>お名前</dt>
-      <dd><%= f.text_field :name%></dd>
-    </dl>
-    <dl>
-      <dt>メールアドレス</dt>
-      <dd><%= f.email_field :email, autofocus: true, autocomplete: "email" %></dd>
-    </dl>
-     <dl>
-      <dt>電話番号</dt>
-      <dd><%= f.text_field :tel, autofocus: true, autocomplete: "tel" %></dd>
-    </dl>
-    <dl>
-      <dt>郵便番号</dt>
-      <dd><%= f.text_field :postal, autofocus: true, autocomplete: "postal", class: "p-postal-code" %></dd>
-    </dl>
-    <dl>
-      <dt>住所</dt>
-      <dd><%= f.text_field :address, autofocus: true, autocomplete: "address",class: "p-region p-locality p-street-address p-extended-address" %></dd>
-    </dl>
-
-    <%= f.submit '会員情報の編集' %>
-  </div>
-<% end %>
+﻿<%= javascript_pack_tag 'user/profile_edit' %>
+<div class="customer-info">
+  <%= form_with model: current_user, url: mypage_profile_edit_path, local:true do |f| %>
+    <h2>お客様情報</h2>
+    <div class="form-group h-adr" >
+      <span class="p-country-name" style="display:none;">Japan</span>
+      <dl>
+        <dt>お名前</dt>
+        <dd>
+          <div class="err-msg-name"></div>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "お名前", id: "name", class: "form-control" %>
+        </dd>
+      </dl>
+      <dl>
+        <dt>メールアドレス</dt>
+        <dd>
+          <div class="err-msg-email"></div>
+          <%= f.email_field :email, autocomplete: "email", placeholder: "メールアドレス", id: "email", class: "form-control"  %>
+        </dd>
+      </dl>
+      <dl>
+        <dt>電話番号</dt>
+        <dd>
+          <div class="err-msg-tel"></div>
+          <%= f.text_field :tel, autocomplete: "tel", placeholder: "電話番号", id: "tel", class: "form-control" %>
+        </dd>
+      </dl>
+      <dl>
+        <dt>郵便番号</dt>
+        <dd>
+          <div class="err-msg-postal"></div>
+          <%= f.text_field :postal, autocomplete: "postal-code", placeholder: "郵便番号", id: "postal", class: "form-control" %>
+        </dd>
+      </dl>
+      <dl>
+        <dt>住所</dt>
+        <dd><%= f.text_field :address, autocomplete: "address",class: "p-region p-locality p-street-address p-extended-address", class: "form-control" %></dd>
+      </dl>
+      <%= f.submit '会員情報の編集', class: "btn" %>
+    </div>
+  <% end %>
+</div>
